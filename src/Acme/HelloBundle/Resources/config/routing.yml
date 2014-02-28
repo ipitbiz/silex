@@ -1,3 +1,8 @@
 acme_hello_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: AcmeHelloBundle:Default:index }
+    pattern:  /hola/{name}/{creator}
+    defaults: { _controller: AcmeHelloBundle:Default:index, creator: null }
+acme_hello_aviso:
+    path: /aviso-legal
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    'AcmeHelloBundle:Static:aviso.html.twig'

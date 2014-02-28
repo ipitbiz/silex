@@ -136,8 +136,13 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         // acme_hello_homepage
-        if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'acme_hello_homepage')), array (  '_controller' => 'Acme\\HelloBundle\\Controller\\DefaultController::indexAction',));
+        if (0 === strpos($pathinfo, '/hola') && preg_match('#^/hola/(?P<name>[^/]++)(?:/(?P<creator>[^/]++))?$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'acme_hello_homepage')), array (  '_controller' => 'Acme\\HelloBundle\\Controller\\DefaultController::indexAction',  'creator' => NULL,));
+        }
+
+        // acme_hello_aviso
+        if ($pathinfo === '/aviso-legal') {
+            return array (  '_controller' => 'Symfony\\Bundle\\FrameworkBundle\\Controller\\TemplateController::templateAction',  'template' => 'AcmeHelloBundle:Static:aviso.html.twig',  '_route' => 'acme_hello_aviso',);
         }
 
         // _welcome
