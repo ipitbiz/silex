@@ -5,5 +5,14 @@
 
 {% block body %}	
 	<h1>Hola {{ name }}!</h1>
-	{% if yomismo != null %}<p>web creada por {{ yomismo }}</p>{% endif %}
+	
+	{% for flashMessage in app.session.flashbag.get('notice') %}
+    <div class="flash-notice">
+        {{ flashMessage }}
+    </div>
+	{% endfor %}
+
+	{% if yomismo != null %}
+		<p>web creada por {{ yomismo }}</p>	
+	{% endif %}
 {% endblock %}
