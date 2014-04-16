@@ -10,7 +10,7 @@ class DefaultController extends Controller
     {
     	if ($creator == null) {
     		$this->get('session')->getFlashBag()->add(
-            'notice',
+            'aviso',
             'Falta el parámetro autor'
         );
     		return $this->render('AcmeHelloBundle:Default:index.html.twig', array('name' => $name, 'yomismo' => $creator));

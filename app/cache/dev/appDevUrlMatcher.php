@@ -135,6 +135,26 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // acme_store_homepage
+        if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'acme_store_homepage')), array (  '_controller' => 'Acme\\StoreBundle\\Controller\\DefaultController::indexAction',));
+        }
+
+        // acme_store_nuevo
+        if ($pathinfo === '/nuevo') {
+            return array (  '_controller' => 'Acme\\StoreBundle\\Controller\\DefaultController::createAction',  '_route' => 'acme_store_nuevo',);
+        }
+
+        // acme_store_mostrar
+        if (0 === strpos($pathinfo, '/producto') && preg_match('#^/producto/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'acme_store_mostrar')), array (  '_controller' => 'Acme\\StoreBundle\\Controller\\DefaultController::showAction',));
+        }
+
+        // acme_store_actualizar
+        if (0 === strpos($pathinfo, '/actualiza') && preg_match('#^/actualiza/(?P<id>[^/]++)/(?P<nombre>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'acme_store_actualizar')), array (  '_controller' => 'Acme\\StoreBundle\\Controller\\DefaultController::updateAction',));
+        }
+
         // acme_hello_homepage
         if (0 === strpos($pathinfo, '/hola') && preg_match('#^/hola/(?P<name>[^/]++)(?:/(?P<creator>[^/]++))?$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'acme_hello_homepage')), array (  '_controller' => 'Acme\\HelloBundle\\Controller\\DefaultController::indexAction',  'creator' => NULL,));

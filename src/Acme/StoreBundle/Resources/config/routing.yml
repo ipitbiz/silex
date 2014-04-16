@@ -1,0 +1,12 @@
+acme_store_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: AcmeStoreBundle:Default:index }
+acme_store_nuevo:
+    pattern:  /nuevo
+    defaults: { _controller: AcmeStoreBundle:Default:create }
+acme_store_mostrar:
+    pattern:  /producto/{id}
+    defaults: { _controller: AcmeStoreBundle:Default:show }    
+acme_store_actualizar:
+    pattern:  /actualiza/{id}/{nombre}
+    defaults: { _controller: AcmeStoreBundle:Default:update }    

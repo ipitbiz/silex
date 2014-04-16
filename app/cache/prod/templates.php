@@ -78,5 +78,7 @@
   'DoctrineBundle:Collector:db.html.twig' => 'C:\\xampp\\htdocs\\silex\\vendor\\doctrine\\doctrine-bundle\\Doctrine\\Bundle\\DoctrineBundle/Resources/views/Collector/db.html.twig',
   'DoctrineBundle:Collector:explain.html.twig' => 'C:\\xampp\\htdocs\\silex\\vendor\\doctrine\\doctrine-bundle\\Doctrine\\Bundle\\DoctrineBundle/Resources/views/Collector/explain.html.twig',
   'AcmeHelloBundle:Default:index.html.twig' => 'C:\\xampp\\htdocs\\silex\\src\\Acme\\HelloBundle/Resources/views/Default/index.html.twig',
+  'AcmeHelloBundle:Static:aviso.html.twig' => 'C:\\xampp\\htdocs\\silex\\src\\Acme\\HelloBundle/Resources/views/Static/aviso.html.twig',
+  'AcmeStoreBundle:Default:index.html.twig' => 'C:\\xampp\\htdocs\\silex\\src\\Acme\\StoreBundle/Resources/views/Default/index.html.twig',
   '::base.html.twig' => 'C:/xampp/htdocs/silex/app/Resources\\views/base.html.twig',
 );
